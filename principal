@@ -37,3 +37,11 @@ yPred = clf.predict(X_test)
 esperado2 = y_test
 predito2 = sgdClf.predict(X_test)
 print(f"Relatório de Classificação: {clf}\n{metrics.classification_report(esperado2, predito2)}\n")
+
+#modelo3
+randomF = ensemble.RandomForestClassifier(random_state=1)
+randomF.fit(X_train,y_train)
+
+esperado3 = y_test
+predito3 = randomF.predict(X_test)
+print(f"Relatório de Classificação: {randomF}\n{metrics.classification_report(esperado3, predito3)}\n")
