@@ -20,7 +20,7 @@ X_test = X_test / 255.0
 X = cifar10.data
 y = cifar10.target
 
-#modelo1 
+#SGDClassifier
 sgdClf = SGDClassifier(random_state=42)
 sgdClf.fit(X_train,y_train)
 sgdClf.predict(X_train)
@@ -29,7 +29,7 @@ esperado = y_test
 predito = sgdClf.predict(X_test)
 print(f"Relatório de Classificação: {sgdClf}\n{metrics.classification_report(esperado, predito)}\n")
 
-#modelo2
+#DecisionTree
 clf = tree.DecisionTreeClassifier()
 clf.fit(X_train,y_train)
 yPred = clf.predict(X_test)
@@ -38,7 +38,7 @@ esperado2 = y_test
 predito2 = sgdClf.predict(X_test)
 print(f"Relatório de Classificação: {clf}\n{metrics.classification_report(esperado2, predito2)}\n")
 
-#modelo3
+#RandomForest
 randomF = ensemble.RandomForestClassifier(random_state=1)
 randomF.fit(X_train,y_train)
 
